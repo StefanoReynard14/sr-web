@@ -1,0 +1,127 @@
+body {
+    background-color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #b1b1b1;
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(44, 0, 85);
+    border-radius: 20px;
+    border: 3px rgb(44, 0, 85);
+}
+
+.navbar {
+    background-color: #000000 !important;
+    color: #fff !important;
+}
+
+.link-devices a {
+    color: rgb(72, 2, 138);
+}
+
+.link-devices a:hover {
+    color: rgba(126, 0, 243, 0.342);
+}
+
+.imagen {
+    transition: all .7s;
+    width: 50px;
+    height: 50px;
+}
+
+.imagen:hover {
+    transition: all .7s;
+    width: 65px;
+    height: 65px;
+}
+
+.mainclas {
+    display: flex;
+    flex-direction: column;
+    height: 39.7em;
+    width: 100%;
+    align-items: start;
+    justify-content: center;
+    background-color: #2d015793;
+}
+
+h1 {
+    font-size: 50px;
+    padding-left: 10px;
+}
+
+.mainclas h2 {
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.btnContacto {
+    background-color: #2a0052;
+    border-radius: 20px;
+    border: 2px solid #000000;
+    margin: 20px;
+    padding: 8px 22px;
+    font-size: 15px;
+}
+
+.btnContacto a {
+    color: #ffffff;
+}
+
+.sobremi {
+    display: flex;
+    flex-direction: column;
+    height: 39.5em;
+    width: 100%;
+    align-items: center;
+    background-color: #2d015793;
+}
+
+.sobremi h2 {
+    display: flex;
+}
+
+.sobremi p {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #b1b1b1;
+}
+
+.sobremi a:hover {
+    color: #818181;
+}
+
+.habilidades {
+    padding-top: 20px;
+}
+
+.imagenes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8181816c;
+    height: 220px;
+    width: 1000px;
+
+}
+
+.html, .css, .js, .php, .sql, .git, .github, .vscode, .sass {
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+}
