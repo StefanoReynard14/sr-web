@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/srWeb.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/srWeb.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
@@ -16,7 +16,7 @@
                 <nav class="navbar bg-body-tertiary">
                     <div class="container">
                       <a class="navbar-brand" href="#inicio">
-                        <img class="imagen" src="./images/srWeb.png" alt="srWeb">
+                        <img class="imagen" src="../images/srWeb.png" alt="srWeb">
                       </a>
                     </div>
                   </nav>
@@ -26,13 +26,13 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item link-devices">
-                  <a class="nav-link" href="#inicio">Inicio</a>
+                  <a class="nav-link" href="../index.html">Inicio</a>
                 </li>
                   <li class="nav-item link-devices">
-                    <a class="nav-link" href="#sobremi">Sobre mi</a>
+                    <a class="nav-link" href="../index.html#sobremi">Sobre mi</a>
                   </li>
                   <li class="nav-item link-devices">
-                    <a class="nav-link" href="#habilidades">Habilidades</a>
+                    <a class="nav-link" href="../index.html#habilidades">Habilidades</a>
                   </li>
                   <li class="nav-item link-devices">
                     <a class="nav-link" href="#contacto">Contacto</a>
@@ -41,8 +41,22 @@
               </div>
             </div>
           </nav>
-    </header
+</header>
+<main class="mainlogin">
+  <div class="login-container">
+          <h2>Contacto</h2>
+          <form method="POST">
+              <input type="text" name="name" placeholder="Nombre completo" require>
+              <input type="text" name="email" placeholder="Email" require>
+              <textarea name="mensaje" placeholder="Mensaje"></textarea>
+              <button type="submit" name="submit">Enviar Datos</button>
+          </form>
+  </div>
+</main>
 
+<?php
+include("../php/registro.php")
+?>
 </body>
 
 
