@@ -3,6 +3,9 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     color: #b1b1b1;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Asegura que el body ocupe el 100% de la pantalla */
 }
 
 body::-webkit-scrollbar {
@@ -36,6 +39,7 @@ body::-webkit-scrollbar-thumb {
     transition: all .7s;
     width: 50px;
     height: 50px;
+    margin: 10px;
 }
 
 .imagen:hover {
@@ -44,13 +48,15 @@ body::-webkit-scrollbar-thumb {
     height: 65px;
 }
 
+/* Ajustamos el main para ocupar toda la pantalla */
 .mainclas {
     display: flex;
     flex-direction: column;
-    height: 39.7em;
-    width: 100%;
-    align-items: start;
     justify-content: center;
+    align-items: flex-start; /* Centrado a la izquierda */
+    height: 100vh; /* Ocupa toda la pantalla */
+    width: 100%;
+    padding-left: 10px; /* Espacio a la izquierda para el texto */
 }
 
 h1 {
@@ -67,7 +73,7 @@ h1 {
     background-color: #2a0052;
     border-radius: 20px;
     border: 2px solid #000000;
-    margin: 20px;
+    margin: 20px 0;
     padding: 8px 22px;
     font-size: 15px;
 }
@@ -79,9 +85,11 @@ h1 {
 .sobremi {
     display: flex;
     flex-direction: column;
-    height: 39.5em;
+    height: auto;
     width: 100%;
     align-items: center;
+    padding: 20px;
+    gap: 20px;
 }
 
 .sobremi h2 {
@@ -114,9 +122,9 @@ a {
     align-items: center;
     justify-content: center;
     background-color: #8181816c;
-    height: 220px;
-    width: 1000px;
-
+    height: auto;
+    width: 100%;
+    gap: 20px;
 }
 
 .html, .css, .js, .php, .sql, .git, .github, .vscode, .sass {
@@ -137,10 +145,12 @@ a {
     flex-direction: column;
     padding: 20px;
     margin: 20px;
-    height: 450px;
-    width: 550px;
+    height: auto;
+    width: 100%;
+    max-width: 550px;
     background-color: #0000004b;
     box-shadow: #000000fd 3px 4px;
+    gap: 15px;
 }
 
 form {
@@ -150,14 +160,17 @@ form {
     flex-wrap: wrap;
     flex-direction: column;
     padding: 3px;
-    height: 450px;
-    width: 450px;
+    height: auto;
+    width: 100%;
+    max-width: 450px;
+    gap: 15px;
 }
 
 .login-container input {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     padding: 4px;
-    margin: 4px;
+    margin: 4px 0;
     font-size: 16px;
     color: #818181;
     border-radius: 12px;
@@ -166,10 +179,11 @@ form {
 }
 
 .login-container textarea {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     height: 150px;
     padding: 4px;
-    margin: 4px;
+    margin: 4px 0;
     font-size: 16px;
     border-radius: 12px;
     color: #818181;
@@ -185,89 +199,149 @@ form {
     color: #fff;
 }
 
-.ok {
+footer {
+    background-color: #2b0a4b;
+    padding: 40px 20px;
+    color: #ffffff;
     text-align: center;
-    width: 100%;
-    padding: 12px;
-    background-color: rgba(145, 255, 0, 0.795);
-    color: #fff;
 }
 
-.bad {
-    text-align: center;
-    width: 100%;
-    padding: 12px;
-    background-color: rgba(133, 0, 0, 0.795);
-    color: #fff;
+.footer-container {
+    display: flex;
+    flex-direction: row; /* Por defecto, en móviles se apilan */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-@media (max-width: 320px) {
+/* Cada columna */
+.foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
-    .navbar {
-        background-color: #000000 !important;
-        color: #fff !important;
-        width: 100%;
+.foot h3 {
+    margin-bottom: 15px;
+    font-size: 18px; /* Ajuste del tamaño de fuente */
+}
+
+.footul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footul li {
+    margin: 3px;
+    color: #ffffff;
+    font-size: 12px; /* Tamaño de fuente más legible en pantallas pequeñas */
+}
+
+.footul a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.footul a:hover {
+    color: #8e44ad;
+}
+
+/* Media queries para hacerlo responsivo */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+    
+    .mainclas {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .mainclas h2 {
+        font-size: 20px;
+    }
+
+    .btnContacto {
+        font-size: 13px;
     }
 
     .imagenes {
-        flex-direction: column;
-        align-items: center;
-        height: 450px;
+        height: auto;
         width: 100%;
+        gap: 15px;
     }
+
     .html, .css, .js, .php, .sql, .git, .github, .vscode, .sass {
         width: 50px;
         height: 50px;
         margin: 10px;
     }
+
+    .footer-container {
+        flex-direction: row; /* En pantallas más grandes, las columnas estarán en fila */
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    }
+
+    .foot h3 {
+        font-size: 22px; /* Mayor tamaño de fuente en pantallas grandes */
+    }
+
+    .footul li, .footul a {
+        font-size: 14px; /* Ajuste del tamaño de fuente para pantallas más grandes */
+    }
+
 }
 
-/* Estilos para dispositivos con un ancho máximo de 480px */
 @media (max-width: 480px) {
-
-    .navbar {
-        background-color: #000000 !important;
-        color: #fff !important;
-        width: 100%;
+    h1 {
+        font-size: 30px;
     }
 
-    .imagenes {
-        flex-direction: column;
-        align-items: center;
-        height: 450px;
-        width: 100%;
+    .mainclas h2 {
+        font-size: 18px;
     }
-    .html, .css, .js, .php, .sql, .git, .github, .vscode, .sass {
-        width: 60px;
-        height: 60px;
-        margin: 12px;
-    }
-}
 
-@media (max-width: 720px) {
-    .navbar {
-        background-color: #000000 !important;
-        color: #fff !important;
-        width: 100%;
+    .login-container, form {
+        width: 90%;
+        gap: 10px;
+    }
+
+    .login-container input, .login-container textarea {
+        width: 90%;
     }
 
     .html, .css, .js, .php, .sql, .git, .github, .vscode, .sass {
-        width: 70px;
-        height: 70px;
-        margin: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        background-color: #000000 !important;
-        color: #fff !important;
-        height: 100%;
+        width: 40px;
+        height: 40px;
+        margin: 8px;
     }
 
-    .html, .css, .js, .php, .sql, .git, .github, .vscode, .sass {
-        width: 70px;
-        height: 70px;
-        margin: 15px;
+    footer {
+        padding: 20px 10px; /* Reducimos el padding en pantallas muy pequeñas */
+    }
+
+    .footer-container {
+        flex-direction: column; /* En pantallas más grandes, las columnas estarán en fila */
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    }
+
+
+    .foot h3 {
+        font-size: 16px; /* Reducimos un poco el tamaño del texto */
+    }
+
+    .footul li, .footul a {
+        font-size: 10px; /* Ajustamos el tamaño del texto para que sea legible en móviles pequeños */
     }
 }

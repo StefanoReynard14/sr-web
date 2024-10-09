@@ -1,28 +1,25 @@
 <?php
-
 include("con_db.php");
 
-if (isset($_POST['submit'])) {
-    if (strlen($_POST['name']) >= 1 & strlen($_POST['email']) >= 1) {
-        $name = trim($_POST ['name']);
-        $email = trim($_POST ['email']);
-        $mensaje =trim($_POST ['mensaje']);
-        $fechareg = date("d/m/y");
-        $consulta = "INSERT INTO datos(nombre, email, mensaje, fecha_reg) VALUES ('$name','$email','$mensaje','$fechareg')";
-        $resultado = mysqli_query($conex,$consulta);
-        if ($resultado) {
-            ?>
-            <h3 class="ok">¡DATOS REGISTRADOS CORRECTAMENTE!</h3>
-            <?php
-        }   else {
-        ?>
-            <h3 class="bad">DATOS REGISTRADOS INCORRECTAMENTE. INTENTE DE NUEVO</h3>
-        <?php
-    } }
-        else {
-        ?>
-            <h3 class="bad">POR FAVOR COMPLETE LOS CAMPOS</h3>
-        <?php
+// Verificar si el formulario fue enviado
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Verificar que todos los campos estén llenos
+    if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['mensaje'])) {
+        $name = trim($_POST['name']);
+        $email = trim($_POST['email']);
+        $mensaje = trim($_POST['mensaje']);
+        $fechareg = date("Y-m-d H:i:s");
+
+        // Validar el email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Email inválido";
+            exit;
+        }
+
+        // Preparar la consulta para evitar inyecciones SQL
+        $consulta = $conex->prepare("INSERT INTO datos (nombre, email, mensaje, fecha_reg) VALUES (?, ?, ?, ?)");
+        $consulta->bind_param($name, $email, $mensaje, $fechareg);
     }
 }
 ?>
+
