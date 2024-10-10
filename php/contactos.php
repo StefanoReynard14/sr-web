@@ -43,16 +43,16 @@
       </nav>
     </header>
     <main class="mainlogin">
-        <div class="login-container">
-            <h2>Contacto</h2>
-            <form method="POST" id="contactForm" data-aos="fade" data-aos-duration="1500">
-                <input type="text" name="name" placeholder="Nombre completo">
-                <input type="text" name="email" placeholder="Email">
-                <textarea name="mensaje" placeholder="Mensaje"></textarea>
-                <button type="submit" name="submit">Enviar Datos</button>
-            </form>
-        </div>
-    </main>
+  <div class="login-container">
+    <h2>Contacto</h2>
+    <form method="POST" id="contactForm" data-aos="fade" data-aos-duration="1500">
+      <input type="text" name="name" placeholder="Nombre completo" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+      <button type="submit" name="submit">Enviar Datos</button>
+    </form>
+  </div>
+</main>
 
     <footer>
   <div class="footer-container">

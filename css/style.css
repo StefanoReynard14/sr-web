@@ -133,70 +133,33 @@ a {
     margin: 15px;
 }
 
-.mainlogin {
-    display: flex;
-    justify-content: center;
-}
-
-.login-container {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px;
-    height: auto;
-    width: 100%;
-    max-width: 550px;
-    background-color: #0000004b;
-    box-shadow: #000000fd 3px 4px;
-    gap: 15px;
-}
-
-form {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 3px;
-    height: auto;
-    width: 100%;
-    max-width: 450px;
-    gap: 15px;
-}
-
-.login-container input {
-    width: 100%;
-    max-width: 350px;
-    padding: 4px;
-    margin: 4px 0;
-    font-size: 16px;
-    color: #818181;
-    border-radius: 12px;
-    border: 1px solid #1f003b;
-    background-color: #2a0052;
-}
-
-.login-container textarea {
-    width: 100%;
-    max-width: 350px;
-    height: 150px;
-    padding: 4px;
-    margin: 4px 0;
-    font-size: 16px;
-    border-radius: 12px;
-    color: #818181;
-    border: 1px solid #1f003b;
-    background-color: #2a0052;
+.login-container input, 
+.login-container textarea, 
+.login-container button {
+    display: block; /* Asegura que los elementos se muestren en bloques separados */
+    width: 100%; /* Ocupa el ancho disponible */
+    max-width: 350px; /* El ancho máximo será de 350px */
+    margin: 4px 0; /* Ajustar márgenes para evitar sobreposiciones */
+    padding: 10px; /* Asegura que haya espacio interno suficiente */
+    font-size: 16px; /* Tamaño de texto adecuado */
+    color: #818181; /* Color de texto */
+    border-radius: 12px; /* Bordes redondeados */
+    border: 1px solid #1f003b; /* Color del borde */
+    background-color: #2a0052; /* Fondo */
 }
 
 .login-container button {
-    border-radius: 20px;
-    border: 1px solid #000000;
-    width: 180px;
-    background-color: #000000;
-    color: #fff;
+    background-color: #000000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #000000; /* Borde negro */
+    cursor: pointer; /* Cambia el cursor a "pointer" para mejorar la experiencia de usuario */
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+    text-align: center; /* Alinea el texto en el centro */
+    transition: background-color 0.3s ease; /* Efecto suave en el cambio de color */
+}
+
+.login-container button:hover {
+    background-color: #3c0059; /* Cambia el color cuando el cursor esté encima */
 }
 
 footer {
