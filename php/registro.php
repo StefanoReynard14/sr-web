@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Preparar la consulta para evitar inyecciones SQL
-        $consulta = $conex->prepare("INSERT INTO datos (nombre, email, mensaje, fecha_reg) VALUES (?, ?, ?, ?)");
+        $consulta = $conex->prepare("INSERT INTO datos (nombre, email, mensaje, fecha_reg) VALUES ('$name', '$email', '$mensaje', '$fechareg')");
         $consulta->bind_param($name, $email, $mensaje, $fechareg);
     }
 }
